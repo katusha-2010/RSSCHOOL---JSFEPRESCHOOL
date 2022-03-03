@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+    
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+header,
+footer {
+    align-items: center;
+    width: 100%;    
+    background-color: black;    
+    padding: 0 20px;
+}
+
+.container {    
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: black;    
+    max-width: 1440px;
+    width: 100%;
+}
+
+.logo {
+    background-image: url(./assets/svg/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+    cursor: pointer;    
+}
+
+.logo:hover {
+    filter: none;
+}
+
+.logo.active {
+    filter: none;
+}
+
+.nav {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-item {
+    padding: 0 20px;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%); 
+}
+
+.nav-item.active {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);  
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    height: calc(100vh - 120px);
+    background: url(./assets/img/forest.jpg) no-repeat;
+    background-size: cover;    
+}
+
+.button {
+    width: 160px;
+    height: 160px;
+    position: absolute;    
+    background: url(./assets/svg/play.svg);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    filter: hue-rotate(7deg) brightness(92%); 
+}
+
+.button.pause {
+    background: url(./assets/svg/pause.svg); 
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.footer {
+    display: flex;    
+    padding-top: 5px;  
+    padding-bottom: 5px;  
+}
+
+.info {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.git {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.git:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%); 
+}
+
+.year {
+    padding: 0 20px;
+}
+
+.rsschool {
+    margin-left: auto;
+    margin-bottom: 5px;
+}
+
+.rss {    
+    width: 135px;
+    height: 50px;
+}
+
+.rss:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%); 
+}
+

@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5px;
+    color: rgb(84, 85, 87);
+    background-color: rgb(235, 242, 245);
+}
+
+.header {    
+    display: flex;    
+    justify-content: end;
+    font-size: 21px;
+    padding-top: 5vh;
+    padding-right: 3vw;    
+}
+
+.slash {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.en { 
+    height: 20px;   
+    cursor: pointer;
+}
+
+.en.active { 
+    font-weight: bold;    
+}
+
+.en:hover { 
+    color: #022742;
+    font-weight: bold;    
+}
+
+.ru {
+    height: 20px;
+    cursor: pointer;
+}
+
+.ru.active { 
+    font-weight: bold;    
+}
+
+.ru:hover { 
+    color: #022742;
+    font-weight: bold;    
+}
+
+.container { 
+    height: 100vh;
+    margin-top: 15vh;    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;     
+   
+}
+
+.chuck_norris {            
+    width: 150px;
+    height: 239px;
+    margin-left: auto;  
+    margin-right: auto;
+    transform:rotate(0deg)  
+    
+}
+
+.chuck_norris.active {
+    transform:rotate(180deg)   
+}
+
+.btn {  
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 0 auto;     */
+    color: white;
+    background-color: #49a6e9;
+    letter-spacing: 0.25rem;
+    padding: 7px 10px;
+    border: 2px solid #49a6e9; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    color: #49a6e9;    
+}
+
+.btn:hover, .btn:focus{
+	box-shadow: inset -11em 0 0 0 #022742, inset 11em 0 0 0 #022742;
+}
+
+.content {
+    height: 10vh;    
+    color: #4f5558;   
+    padding-left: 10vw;
+    padding-right: 10vw;
+    align-items: center;
+    font-size: 21px;
+    line-height: 30px;
+}
+
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;    
+    position: absolute;
+    top: 91%;
+    left: 0%; 
+    background-color: #49a6e9;
+    color: white;
+    font-size: 21px;   
+}
+
+.container_footer {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #49a6e9;
+}
+
+.info{
+    display: flex;    
+}
+
+.git {
+    color: white;
+    font-size: 21px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.git:hover {
+    filter: hue-rotate(90deg) opacity(50%) contrast(100%);
+    transition: 1s;
+}
+
+.rsschool {
+    margin-left: auto;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+
+.rss {    
+    width: 135px;
+    height: 50px;
+}
+
+.rss:hover {
+    filter: hue-rotate(90deg) opacity(50%) contrast(200%);
+    transition: 1s;
+}
+
+.year {
+    padding-left: 10px;
+    padding-right: 10px;
+}
