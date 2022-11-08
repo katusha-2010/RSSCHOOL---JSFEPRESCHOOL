@@ -93,6 +93,7 @@ function toggleMenu() {
   burger.classList.toggle('open');
   nav.classList.toggle('open');
 }
+
 burger.addEventListener('click', toggleMenu);
 nav.addEventListener('click', toggleMenu);
 
@@ -134,7 +135,7 @@ function closeMenu() {
   }
 
   portfolioBtns.addEventListener('click', changeClassActive);
-  // //---------------------------------------------------------------------------------------------
+  // //----------------------------------------------------------------translate page----------------------------------------
    
   const english = document.querySelector('.english');
   const russian = document.querySelector('.russian');
@@ -144,16 +145,10 @@ function closeMenu() {
 
   function getTranslate(langActive) {     
     let chosenLang = langActive === 'ru'? i18Obj.ru : i18Obj.en;   
-    matches.forEach(el => el.textContent = chosenLang[el.dataset.i18])
-
-    // if (currentElement.placeholder) {
-    //   currentElement.placeholder = el.textContent;
-    //   currentElement.textContent = ''
-    // }    
+    matches.forEach(el => el.textContent = chosenLang[el.dataset.i18])  
   }
 
-  function сlassActive(event) {
-    
+  function сlassActive(event) {    
       langBtns.forEach((el) => {
       el.classList.remove('active');      
       })
@@ -165,6 +160,61 @@ function closeMenu() {
   english.addEventListener('click', () => getTranslate('en'));
   russian.addEventListener('click', () => getTranslate('ru'));
 
-  
+  // //----------------------------------------------------------------Form----------------------------------------
+  const form = document.forms[3];
+  const {elements} = form;
+  const [elementEmail, elementPhone] = form;
 
-  
+  function getValueFromForm(event) {
+    // event.preventDefault();
+    const values = {};
+
+    for(let i = 0; i < elements.length; i++) {
+      const formElement = elements[i];
+      const {name} = formElement;
+       if (name) {
+        const {value} = formElement;
+        values[name] = value;
+       }    
+    }
+
+    console.log('values',values)    
+  }
+
+  function validateEmail(email) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function validatePhone(phone) {
+    let re = /^[0-9\s]*$/;
+    return re.test(String(phone));
+  }
+
+
+  form.addEventListener('submit', getValueFromForm);
+
+  elementEmail.addEventListener('change', () => {
+
+    if(!validateEmail(elementEmail.value)) {
+        elementEmail.classList.add('error');
+        const emailErrorMessage = document.querySelector('.email-error-message');        
+        emailErrorMessage.textContent = 'invalid email'; 
+    } else {  
+        document.querySelector('.email-error-message').textContent = '';    
+        elementEmail.classList.remove('error');
+    }
+})
+
+elementPhone.addEventListener('change', () => {
+    console.log(validatePhone(elementPhone.value))
+    if(!validatePhone(elementPhone.value)) {
+        elementPhone.classList.add('error');
+        const phoneErrorMessage = document.querySelector('.phone-error-message');
+        phoneErrorMessage.textContent = 'write only numbers';
+        return false;
+    } else {
+        document.querySelector('.phone-error-message').textContent = '';
+        elementPhone.classList.remove('error');
+    }
+})

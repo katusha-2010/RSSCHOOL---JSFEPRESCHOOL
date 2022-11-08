@@ -115,7 +115,12 @@
                 <div class="video-player">
                     <div class="video-image"></div>
                     <button class="player-btn"></button>                    
-                </div>          
+                </div>
+                <!-- <video class="video-player" src="videofile.ogg" autoplay poster="/assets/img/video-player.jpg" controls>
+                    <div class="video-image"></div>
+                    <button class="player-btn"></button>                    
+                </video> -->
+
             </section>                      
             <section class="section-price" id="price">
                 <div class="price-wrapper">
@@ -168,22 +173,22 @@
             </section> 
             <section class="section-contacts" id="contacts">
                 <h2 class="contacts-header" data-i18="contact-me">Contact me</h2>
-                <form class="form-email">
-                    <label>
-                        <input class="email" type="email" placeholder="E-mail" data-i18="email">
-                    </label>
-                </form>
-                <form class="form-phone">
-                    <label>
-                        <input class="phone" type="tel" placeholder="Phone" data-i18="phone">
-                    </label>
-                </form>
-                <form class="message">
-                    <textarea placeholder="Message"></textarea>
-                </form>
-                <form class="contacts-btn">
-                    <button class="hero-btn" data-i18="send-message">Send message</button>
-                </form>
+                <form action="https://formspree.io/f/mnqrljrl" method="POST" class="form">
+                    <div class="form-email">
+                        <input class="email" type="email" placeholder="E-mail" data-i18="email" name="email" required>
+                        <div class="email-error-message"></div>
+                    </div>
+                    <div class="form-phone">
+                        <input class="phone" type="tel" placeholder="Phone" data-i18="phone" name="phone" required>
+                        <div class="phone-error-message"></div>
+                    </div>
+                    <div class="message">
+                        <textarea placeholder="Message" name="message"></textarea>
+                    </div>
+                    <div class="contacts-btn">
+                        <button type="submit" class="hero-btn" data-i18="send-message">Send message</button>
+                    </div>
+                </form>            
             </section>           
         </div>
     </main>

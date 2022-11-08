@@ -1004,7 +1004,8 @@ textarea {
 .form-email,
 .form-phone,
 .message {
-  margin-right: 18px;  
+  margin-right: 18px;
+  margin-bottom: 5px; 
 }
 
 
@@ -1016,6 +1017,14 @@ textarea {
     text-align: center;      
     margin-right: 0px;      
   }
+}
+
+.form-email .error {
+  border: 1px solid red;
+}
+
+.form-phone .error {
+  border: 1px solid red;
 }
 
 /*----------------------------------------------------footer------------------------------------------------------------ */
